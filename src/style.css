@@ -1,1 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(240, 240, 240);
+}
+
+.to-do {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  width: 30%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 1px 3px 20px -8px #000;
+}
+
+.to-do > * {
+  border-bottom: 1px solid rgb(185, 185, 185);
+  padding: 0.7rem;
+}
+
+.to-do > li {
+  display: flex;
+}
+
+.title {
+  font-size: 1.4rem;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input {
+  border: none;
+  font-style: italic;
+  outline: none;
+}
+
+.add-button {
+  border: solid black;
+  background-color: #fff;
+  border-width: 0 3px 3px 0;
+  padding: 4px;
+  transform: rotate(-45deg);
+  margin-right: 0.5rem;
+}
+
+.add-button:hover {
+  border: solid blueviolet;
+  border-width: 0 3px 3px 0;
+}
+
+.checkbox {
+  border: 1px solid #000;
+  border-radius: 2px;
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: #fff;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox:hover {
+  background-color: blueviolet;
+}
+
+.list-item {
+  align-items: center;
+}
+
+.clear-button-container {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(239, 239, 239);
+  padding: 0.9rem;
+}
+
+.clear-button {
+  border: none;
+  color: rgb(101, 109, 118);
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clear-button:hover {
+  color: #000;
+  text-decoration: underline;
+}
