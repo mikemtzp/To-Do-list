@@ -8,7 +8,7 @@ In this project, I will build a simple HTML list of To Do tasks. This simple web
 - Webpack
 
 ## 💻 Live demo
-- [Live Demo Link](https://mikemtzp.github.io/To-Do-list/)
+- [Live Demo Link](https://mikemtzp.github.io/To-Do-list/dist)
 
 ## 🧮 Prerequisites
 
