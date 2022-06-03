@@ -2,7 +2,7 @@
 import { setStorage } from './storage.js';
 import { deleteTask } from './crud-methods.js';
 
-const clearBtn = document.getElementById('clear-button');
+export { clearAll };
 
 const clearAll = () => {
   const localData = JSON.parse(localStorage.getItem('todo'));
@@ -17,6 +17,3 @@ const clearAll = () => {
   data.map((e) => e.index = count += 1);
   setStorage(data);
 };
-
-clearBtn.addEventListener('click', clearAll);
-

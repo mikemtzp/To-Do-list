@@ -72,12 +72,6 @@ body {
   align-self: center;
 }
 
-.add-button:hover {
-  border: solid blueviolet;
-  border-width: 0 3px 3px 0;
-  cursor: pointer;
-}
-
 .checkbox {
   border: 1px solid #000;
   border-radius: 2px;

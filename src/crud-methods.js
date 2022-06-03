@@ -1,9 +1,11 @@
 /* eslint-disable */
 import { setStorage } from './storage.js';
+import { clearAll } from './clear.js';
 
-export { addTask, deleteTask, updateStorage };
+export { deleteTask, updateStorage, tasks, addTask };
 
 const toDoList = document.getElementById('to-dos');
+const clearBtn = document.getElementById('clear-button');
 
 class Task {
   constructor(description, completed, index) {
@@ -13,9 +15,10 @@ class Task {
   }
 }
 
-const tasks = [];
-
+let tasks = [];
 const addTask = (taskValue) => {
+  const localData = JSON.parse(localStorage.getItem('todo'));
+  localData.map((i) => tasks.push(i));
   const taskContainer = document.createElement('div');
   taskContainer.className = 'list-item';
   taskContainer.innerHTML += `
@@ -89,30 +92,31 @@ const editTask = (taskContainer, task) => {
   });
 };
 
+
 const getStorage = () => {
   const data = JSON.parse(localStorage.getItem('todo'));
-  if (data) {
-    data.map((i) => {
-      tasks.push(i);
-      const taskContainer = document.createElement('div');
-      taskContainer.className = 'list-item';
-      taskContainer.innerHTML += `
+  if (!data) {
+    localStorage.setItem('todo', JSON.stringify([]));
+  }
+  data.map((i) => {
+    const taskContainer = document.createElement('div');
+    taskContainer.className = 'list-item';
+    taskContainer.innerHTML += `
     <input type="checkbox" class="checkbox">
     <span>${i.description}</span>
     <i class="fas fa-ellipsis-v"></i>
     <i class="fas fa-trash"></i>
     `;
-      toDoList.appendChild(taskContainer);
+    toDoList.appendChild(taskContainer);
 
-      const edit = document.querySelectorAll('.fa-ellipsis-v');
-      edit.forEach((i) => {
-        i.addEventListener('click', () => {
-          editTask(taskContainer, i.previousElementSibling);
-          i.parentElement.classList.add('list-selected-item');
-        });
+    const edit = document.querySelectorAll('.fa-ellipsis-v');
+    edit.forEach((i) => {
+      i.addEventListener('click', () => {
+        editTask(taskContainer, i.previousElementSibling);
+        i.parentElement.classList.add('list-selected-item');
       });
     });
-  }
+  });
 
   const checkbox = document.querySelectorAll('.checkbox');
   checkbox.forEach((i) => {
@@ -131,16 +135,11 @@ const getStorage = () => {
       deleteTask(i.parentElement);
     });
   });
-
-  // let count = -1;
-  // const localData = JSON.parse(localStorage.getItem('todo'));
-  // const arr = Array.from(localData).filter( e => e.completed === false)
-  // arr.map(e => e.index = count += 1);
-
-  setStorage(tasks);
 };
 
-window.addEventListener('load', getStorage);
+window.addEventListener('load', () => {
+  getStorage();
+});
 
 const updateStorage = () => {
   const localData = JSON.parse(localStorage.getItem('todo'));
@@ -154,3 +153,8 @@ const updateStorage = () => {
   }
   setStorage(localData);
 };
+
+clearBtn.addEventListener('click', () => {
+  clearAll();
+  console.log(tasks);
+});
