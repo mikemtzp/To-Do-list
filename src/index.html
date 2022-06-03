@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <title>To-Do list</title>
   </head>
   <body>
-    <h1>To-do List</h1>
-    <ul class="to-do" id="to-do"></ul>
+    <div class="to-do-container" id="to-do-container">
+      <h1 class="title">Today's To Do</h1>
+      <form class="form">
+        <div class="input-container">
+          <input type="text" class="text-input" id="text-input" placeholder="Add to your list..">
+          <button type="button" class="add-button" id="add-button"></button>
+        </div>
+        <div class="to-dos" id="to-dos"></div>
+        <div class="clear-button-container">
+          <p class="clear-button" id="clear-button">Clear all completed</p>
+        </div>
+      </form>
+    </div>
   </body>
 </html>
+
+

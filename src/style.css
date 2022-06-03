@@ -9,27 +9,27 @@ body {
   background-color: rgb(240, 240, 240);
 }
 
-.to-do {
+.to-do-container {
   background-color: #fff;
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 50%;
-  left: 20%;
+  left: 50%;
   transform: translate(-50%, -50%);
   list-style: none;
-  width: 30%;
+  min-width: 40%;
   height: auto;
   border-radius: 5px;
   box-shadow: 1px 3px 20px -8px #000;
 }
 
-.to-do > * {
+.to-do-container > * {
   border-bottom: 1px solid rgb(185, 185, 185);
   padding: 0.7rem;
 }
 
-.to-do > li {
+.to-do-container > li {
   display: flex;
 }
 
@@ -39,14 +39,27 @@ body {
 
 .form {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  padding: 0;
 }
 
-.input {
+.form > * {
+  border-bottom: 1px solid rgb(185, 185, 185);
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem;
+}
+
+.text-input {
   border: none;
   font-style: italic;
   outline: none;
+  width: 100%;
 }
 
 .add-button {
@@ -56,11 +69,13 @@ body {
   padding: 4px;
   transform: rotate(-45deg);
   margin-right: 0.5rem;
+  align-self: center;
 }
 
 .add-button:hover {
   border: solid blueviolet;
   border-width: 0 3px 3px 0;
+  cursor: pointer;
 }
 
 .checkbox {
@@ -73,12 +88,53 @@ body {
   cursor: pointer;
 }
 
+.checkbox-selected {
+  background-color: rgb(240, 210, 255);
+  border-color: rgb(143, 143, 143);
+}
+
 .checkbox:hover {
   background-color: blueviolet;
+  border-color: #000;
 }
 
 .list-item {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 0.7rem;
+  border-bottom: 1px solid rgb(185, 185, 185);
+}
+
+.list-item span {
+  width: 100%;
+}
+
+.text-selected {
+  text-decoration: line-through;
+  color: rgb(143, 143, 143);
+}
+
+.list-selected-item {
+  background-color: rgb(240, 210, 255);
+}
+
+.fa-ellipsis-v {
+  padding: 0 4px;
+  cursor: pointer;
+}
+
+.disable-edit {
+  display: none;
+}
+
+.fa-trash {
+  display: none;
+}
+
+.delete-icon {
+  display: block;
 }
 
 .clear-button-container {
@@ -86,6 +142,7 @@ body {
   justify-content: center;
   background-color: rgb(239, 239, 239);
   padding: 0.9rem;
+  width: 100%;
 }
 
 .clear-button {
