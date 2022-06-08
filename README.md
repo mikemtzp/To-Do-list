@@ -7,8 +7,7 @@ In this project, I will build a simple HTML list of To Do tasks. This simple web
 - Linters: Lighthouse, Webhint, Stylelint & ESlint
 - Webpack
 
-## 💻 Live demo
-- [Live Demo Link](https://mikemtzp.github.io/To-Do-list/dist)
+## 💻 [Live demo](https://mikemtzp.github.io/To-Do-list/dist)
 
 ## 🧮 Prerequisites
 
