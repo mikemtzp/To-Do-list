@@ -1,6 +1,5 @@
 # To-Do list
-In this project, I will build a simple HTML list of To Do tasks. This simple web page will be built using webpack and served by a webpack dev server.
-
+> This project shows a functional list of To Do tasks. Users can add, edit, delete and keep saved different tasks. It is bundled and served with Webpack. Built with JavaScript.
 ## 🛠️ Built With
 
 - HTML, CSS & Javascript
