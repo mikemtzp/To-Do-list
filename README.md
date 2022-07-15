@@ -31,7 +31,7 @@ $ open index.html file
 
 - GitHub: [@mikemtzp](https://github.com/mikemtzp)
 - Twitter: [@mikemtzp](https://twitter.com/mikemtzp)
-- LinkedIn: [Miguel Martínez Prieto](https://www.linkedin.com/in/miguel-mart%C3%ADnez-prieto-a42406166/)
+- LinkedIn: [Miguel Martínez Prieto](https://www.linkedin.com/in/mike-mart%C3%ADnez/)
 
 ## 🤝 Contributing
 
